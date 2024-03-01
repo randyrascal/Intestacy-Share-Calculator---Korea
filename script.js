@@ -1,86 +1,49 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to show or hide additional questions based on selections
+    function updateQuestions() {
+        const childrenAliveSelect = document.getElementById('childrenAlive');
+        const parentsAliveSelect = document.getElementById('parentsAlive'); // Add this select in HTML
+        // Similar for grandparents and siblings, following the pattern
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    padding: 20px;
-    background-color: #f4f4f4;
-}
+        // Example for children, repeat for other relations
+        if (childrenAliveSelect.value === 'yes') {
+            // Show additional dropdown for number of children, you'll need to add this in HTML or here dynamically
+        } else {
+            // Hide the dropdown if it exists
+        }
+        // Repeat for parents, grandparents, and siblings
+    }
 
-header {
-    background: #005a87;
-    color: #ffffff;
-    padding: 20px;
-    text-align: center;
-}
+    // Add event listeners for change on the relevant select elements
+    document.getElementById('childrenAlive').addEventListener('change', updateQuestions);
+    // Repeat for other select elements like parentsAlive, grandparentsAlive, siblingsAlive
 
-header h1 {
-    margin: 0;
-    font-size: 24px;
-}
+    // Function to calculate and display inheritance shares
+    function calculateShares() {
+        // Logic to determine the heirs based on the selected options
+        // For simplicity, here's a placeholder for logic
+        const spouseAlive = document.getElementById('spouseAlive').value;
+        const childrenAlive = document.getElementById('childrenAlive').value;
+        // Add similar lines for parentsAlive, grandparentsAlive, siblingsAlive
 
-main {
-    padding: 20px;
-}
+        let resultText = 'Eligible Heirs and Shares: \n';
 
-.introduction p {
-    margin-bottom: 20px;
-}
+        // Example calculation logic, replace with actual conditions and calculations
+        if (spouseAlive === 'yes' && childrenAlive === 'yes') {
+            resultText += 'Heirs: Spouse and children\n';
+            resultText += 'Legal Inheritance Shares: Spouse (1.5) and each child (1)\n';
+        } else if (spouseAlive === 'yes' && childrenAlive === 'no') {
+            // Continue with other conditions
+        }
+        // Continue adding else-if blocks for different scenarios
 
-.calculator {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        // Display the result
+        document.getElementById('result').innerText = resultText;
+    }
 
-.question {
-    margin-bottom: 20px;
-}
-
-.question label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.question select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.calculation-result button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background: #007bff;
-    color: #ffffff;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.calculation-result button:hover {
-    background: #0056b3;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #333;
-    color: #ffffff;
-    margin-top: 20px;
-}
-
-#result {
-    margin-top: 20px;
-}
+    // Add event listener for the calculate button
+    document.getElementById('inheritanceForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting traditionally
+        calculateShares();
+    });
+});
