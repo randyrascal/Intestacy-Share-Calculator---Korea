@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance Share Calculator</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Law Firm Name</h1>
+    </header>
+    <main>
+        <section class="introduction">
+            <p>This calculator helps you understand inheritance shares under the Korean Civil Code. Please answer the following questions:</p>
+        </section>
+        <section class="calculator">
+            <form id="inheritanceForm">
+                <div class="question">
+                    <label for="spouseAlive">Is the spouse alive?</label>
+                    <select id="spouseAlive" name="spouseAlive">
+                        <option value="">Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <label for="childrenAlive">Are any children alive?</label>
+                    <select id="childrenAlive" name="childrenAlive">
+                        <option value="">Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    <!-- Additional dropdown for number of children will be dynamically added via JavaScript -->
+                </div>
+                <!-- Repeat the structure above for parents, grandparents, and siblings -->
+                <div class="calculation-result">
+                    <button type="button" onclick="calculateShares()">Calculate</button>
+                </div>
+            </form>
+            <div id="result"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Law Firm Name. All rights reserved.</p>
+    </footer>
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
